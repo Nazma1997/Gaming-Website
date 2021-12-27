@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Gaming</title>
+</head>
+<body class=" ">
+    <header>
+          <!-- Navigation  -->
+          <div class="mx-auto sticky top-0 flex justify-between pt-4  bg-zinc-500">
+              <img class="h-8 mx-4" src="data:image/jpeg;base64,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" alt="">
+
+              <button class=" rounded-lg p-1 m-3 bg-gradient-to-r from-indigo-500 mx-4">Buy Now</button>
+          </div>
+          <!-- !!!  -->
+              <section>
+                  <div class=" lg:grid grid-cols-2 gap-2">
+                    <div class="  m-6 items-center mt-20 justify-items-center">
+                        <h1 class="font-bold text-7xl mt-2 text-gray-500">GILBARD</h1>
+                        <h1 class="text-5xl mt-2 text-gray-500">Gaming Tailwind v3.0.7</h1>
+                             <p class="text-xl mt-2 text-gray-500">Gilbard is an excellent HTML5 template for selling any 
+                              MMORPG,<br> Adventure Plus Action, First Person Shooter, RPG game.</p>
+                             <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo <button>
+                     </div>
+                      <div>
+                          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2FtaW5nfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="">
+                      </div>
+                  </div>
+              </section>
+              
+
+    </header>
+
+    <main>
+           <!-- Section 1  -->
+          <section class="pt-32 mx-7 ">
+            <h1 class="uppercase font-bold text-5xl text-gray-400 mb-12">creative home version</h1>
+            <div class="lg:flex">
+                <div>
+                     <img class="w-10/12" src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/home-landing.png" alt="">
+                </div>
+                <div class="pt-32">
+                      <h1 class="uppercase text-5xl font-semibold underline">home landing</h1>
+                      <p class="text-2xl mt-5">Build your dream using this stunning landing page</p>
+                      <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo 
+                        <button>
+                </div>
+            </div>
+          </section>
+
+          <!-- !!  -->
+          <!-- section two  -->
+          <section class="pt-32 mx-7 ">
+            
+            <div class="lg:flex">
+             <div>
+                  <img class="w-10/12" src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/home-2.png" alt="">
+             </div>
+             <div class="pt-32">
+                      <h1 class="uppercase text-5xl font-semibold underline">home page 01</h1>
+                      <p class="text-2xl mt-5">Build your dream using this stunning landing page</p>
+                      <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo 
+                        <button>
+                </div>
+            </div>
+          </section>
+
+          <!-- !!  -->
+          <!-- section 3 -->
+          <section class="pt-32 mx-7 ">
+      
+            <div class="lg:flex">
+             <div>
+                  <img class="w-10/12" src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/home-2.png" alt="">
+             </div>
+             <div class="pt-32">
+                      <h1 class="uppercase text-5xl font-semibold underline">home page 02</h1>
+                      <p class="text-2xl mt-5">Build your dream using this stunning landing page</p>
+                      <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo 
+                        <button>
+                </div>
+            </div>
+          </section>
+          <!-- section 4  -->
+          <section class="pt-32 mx-7 ">
+      
+            <div class="lg:flex">
+             <div>
+                  <img class="w-10/12" src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/home-3.png"alt="">
+             </div>
+             <div class="pt-32">
+                      <h1 class="uppercase text-5xl font-semibold underline">home page 03</h1>
+                      <p class="text-2xl mt-5">Build your dream using this stunning landing page</p>
+                      <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo 
+                        <button>
+                </div>
+            </div>
+          </section>
+          <!-- !!  -->
+          <!-- section 5 -->
+          <section class="pt-32 mx-7 ">
+      
+            <div class="lg:flex">
+             <div>
+                  <img class="w-10/12" src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/home-4.png"alt="">
+             </div>
+             <div class="pt-32">
+                      <h1 class="uppercase text-5xl font-semibold underline">home page 04</h1>
+                      <p class="text-2xl mt-5">Build your dream using this stunning landing page</p>
+                      <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo 
+                        <button>
+                </div>
+            </div>
+          </section>
+          <!-- section 6  -->
+          <section class="pt-32 mx-7 ">
+            <div class="lg:flex">
+             <div>
+                  <img class="w-10/12" src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/home-5.png"alt="">
+             </div>
+             <div class="pt-32">
+                      <h1 class="uppercase text-5xl font-semibold underline">home page 05</h1>
+                      <p class="text-2xl mt-5">Build your dream using this stunning landing page</p>
+                      <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo 
+                        <button>
+                </div>
+            </div>
+          </section>
+          <!-- section 7 -->
+          <section class="pt-32 mx-7 ">
+            <div class="lg:flex">
+             <div>
+                  <img class="w-10/12" src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/home-6.png"alt="">
+             </div>
+             <div class="pt-32">
+                      <h1 class="uppercase text-5xl font-semibold underline">home page 06</h1>
+                      <p class="text-2xl mt-5">Build your dream using this stunning landing page</p>
+                      <button class=" rounded-lg p-3 m-3 bg-gradient-to-r from-indigo-500 mx-1">View Demo 
+                        <button>
+                </div>
+            </div>
+          </section>
+          <!-- !!!  -->
+          <h1 class=" pt-32 mx-5 uppercase font-bold text-5xl text-gray-400 mb-12">other pages</h1>
+          <section>
+            <div class="lg:grid grid-cols-3 gap-4 mx-4">
+                
+                   <div class="" >
+                       <img  src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/games.png" alt="">
+                       <h1 class="text-center text-2xl pt-3 font-semibold uppercase hover:text-red-500">game page</h1>
+                   </div>
+                
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/games-details.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">game details page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/gallery.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">gallary page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">video page</h1>
+                </div>
+                <div> 
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">forum create page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">forum post page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">blog page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">blog left sidebar page</h1>
+                </div>
+                <div> 
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">blog right sidebar page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">blog list page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">blog list left sidebar page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">single blog list left sidebar page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">single blog list right sidebar page</h1>
+                </div>
+                <div> 
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">cheack out page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">login page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">register page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">contract page</h1>
+                </div>
+                <div>
+                    <img src="https://template.hasthemes.com/gilbard/p3/img/gilbard/demo/video.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase hover:text-red-500">video page</h1>
+                </div>
+
+              </div>
+          </section>
+
+          <!-- !!!  -->
+          <section>
+            <h1 class=" pt-32 mx-5 uppercase font-bold text-5xl text-gray-400 mb-12">gilbard features</h1>
+            <div class="lg:grid grid-cols-3 mx-4 gap-4">
+                <div class="flex">
+                     <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium">responsive design</h4>
+                         <p class="text-xl">gilbard is supper responsive & work perfectly in all devices.</p>
+                     </div>
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium">user friendly</h4>
+                         <p class="text-xl">gilbard easy to use for any technical & nontechnical People.</p>
+                     </div>
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium">creative design </h4>
+                         <p class="text-xl">It's comes with creative & smart design layout.</p>
+                     </div>
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium">icon font</h4>
+                         <p class="text-xl">It's comes with most popular FontAwesome icon font.</p>
+                     </div>  
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium"> google font</h4>
+                         <p class="text-xl">600 Google Fonts. You can change font for all elements easily.</p>
+                     </div>  
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium"> ajax contract form</h4>
+                         <p class="text-xl">It comes with ajax contact form which makes messaging much more quicker.</p>
+                     </div>  
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium"> clean makeup</h4>
+                         <p class="text-xl">We developed it followed by W3C Markup. </p>
+                     </div>  
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium">free updates</h4>
+                         <p class="text-xl">Purchase once & get life-time free updates. </p>
+                     </div>  
+                </div>
+                <div class="flex">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                          </svg>
+                     </div>
+                     <div class="ml-2">
+                         <h4 class="font-medium">real support</h4>
+                         <p class="text-xl">We provide 7 days a week one by one real support. </p>
+                     </div>  
+                </div>
+              </div>
+          </section>
+
+          <!-- !!!  -->
+          <section>
+            <h1 class=" pt-32 mx-5 uppercase font-bold text-5xl text-gray-400 mb-12">You May Also Like (HTML)</h1>
+            <div class="lg:grid grid-cols-3 gap-4">
+                <div>
+                    <img src="https://s3.envato.com/files/232479246/preview.__large_preview.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">
+                  simple contruction html5 template</h1>
+                </div>
+                <div>
+                    <img src="https://s3.envato.com/files/223304965/preview.__large_preview.jpg" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">
+                  raees responsive articture/template</h1> 
+                </div>
+                <div>
+                    <img src="https://s3.envato.com/files/254880184/01_preview_khonike.__large_preview.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">
+                  konike real state tailwind v3.0.7 template </h1>
+                </div>
+              </div>
+          </section>
+          <!-- !!!  -->
+          <h1 class=" pt-32 mx-5 uppercase font-bold text-5xl text-gray-400 mb-12">You May Also Like (WordPress)</h1>
+          <section>
+            <div class="lg:grid grid-cols-3 gap-4">
+                <div>
+                    <img src="https://s3.envato.com/files/230133244/preview.__large_preview.jpg" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">
+                        Raees – Creative Responsive Architecture Theme</h1>
+                </div>
+                <div>
+                    <img src="https://s3.envato.com/files/239072226/preview.__large_preview.png" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">
+                        Tuco - Construction & Building WordPress Theme</h1> 
+                </div>
+                <div>
+                    <img src="https://s3.envato.com/files/225152672/preview.__large_preview.jpg" alt="">
+                    <h1 class="text-center text-2xl pt-3 font-semibold uppercase  hover:text-red-500">
+                        Shield - Roofing Service WordPress Theme </h1>
+                </div>
+              </div>
+          </section>
+
+          <section>
+              <div class="lg:flex justify-between mt-12" >
+                <h1 class=" pt-32 mx-5 uppercase font-bold text-xl text-gray-400 mb-12">Make your website come to life quickly.</h1>
+                <button class=" rounded-lg p-5  bg-gradient-to-r from-indigo-500 ">Contract Now 
+                    <button>
+              </div>
+          </section>
+
+    </main>
+    <footer>
+        <h1 class=" text-center pt-32 mx-5 text-lime-400 font-bold text-xl  mb-12">All Are Reserved @2021 by Nazma 
+             
+    </footer>
+    
+</body>
+</html>
